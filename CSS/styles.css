@@ -2,7 +2,6 @@
 .main-section {
   background-color: #03a9f3;
   height: 70%;
-  margin-bottom: 40px;
 }
 .main-section-container {
   display: flex;
@@ -32,6 +31,10 @@
   height: 65px;
   width: 200px;
   border-radius: 5px;
+}
+.main-section-bt  i {
+  color: #03a9f3;
+  font-size: 20px;
 }
 .sun {
   display: flex;
@@ -67,12 +70,13 @@
 }
 /*******************************Footer*********************************/
 footer {
-  height: 40%;
+  height: 30%;
+  padding-top: 30px;
 }
 .footer-container {
   display: flex;
   flex-direction: column;
-  gap: 40px;
+  gap: 16px;
 }
 .days-forecast {
   display: flex;
@@ -98,6 +102,24 @@ footer {
   width: 100px;
   padding: 20px;
 }
+.min, .max {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  align-items: center;
+  justify-content: center;
+}
+.min i{
+  color: #03a9f3;
+}
+.max i{
+  color: #d82828;
+}
+.min-max-icon i::before {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
 .max p {
   line-height: 20px;
   color: #767676;
@@ -107,19 +129,4 @@ footer {
   line-height: 20px;
   color: #767676;
   font-size: 16px;
-}
-#max-icon{
-  width:15px;
-  height:15px;
-  margin-bottom:8.5px;
-}
-#min-icon{
-  width:13.5px;
-  height:13.5px;
-  margin-bottom:10px;
-}
-.centeredIcon{
-  display:flex;
-  justify-content: center;
-  
 }

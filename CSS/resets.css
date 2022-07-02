@@ -18,4 +18,7 @@
     position: relative;
     
   }
-  
+  i {
+    color: #000;
+    font-size: 16px;
+  }

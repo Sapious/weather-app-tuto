@@ -1,155 +1,67 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Weather App</title>
-    <link rel="stylesheet" href="./CSS/styles.css" />
-    <link rel="stylesheet" href="./CSS/resets.css" />
-    <link
-    rel="stylesheet"
-    href="https://use.fontawesome.com/releases/v5.13.0/css/all.css"
-    integrity="sha384-Bfad6CLCknfcloXFOyFnlgtENryhrpZCe29RTifKEixXQZ38WheV+i/6YWSzkz3V"
-    crossorigin="anonymous"
-  />
-  </head>
-  <body>
-    <div class="main-section">
-      <div class="main-section-container">
-        <div class="location" >
-            <a href="#"onclick="getWeatherData()" id="location">Use Your Location</a>
-        </div>
-        
-        <img class="main-section-icon" id="main-section-icon" src="" alt="weather-icon" />
-        
-        <p class="temperature" id="temperature" >3°C</p>
+	<head>
+		<meta charset="UTF-8" />
+		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Weather App</title>
+		<link rel="stylesheet" href="./css/styles.css" />
+		<link rel="stylesheet" href="./css/resets.css" />
+		<script
+			src="https://kit.fontawesome.com/40d2806992.js"
+			crossorigin="anonymous"
+		></script>
+	</head>
+	<body onload="getWeatherData()">
+		<div class="main-section">
+			<div class="main-section-container">
+				<div class="location">
+					<a href="#" onclick="getWeatherData()" id="location"
+						>Use Your Location</a
+					>
+				</div>
 
-        <h1 class="zone" id="zone">Albuquerque, NM</h1>
-        <p class="description" id="description">It is clear right now.</p>
-        <div class="main-section-bts">
-          <div class="main-section-bt">
-            <p>Wind:</p>
-            <img class="const-icon" id="sunset-icon" src="./images/wind.png" alt="weather-icon" />
-            <p id="wind">11.27 km/h</p>
-          </div>
-          <div class="main-section-bt">
-            <img class="const-icon" id="sunset-icon" src="./images/sunrise.png" alt="weather-icon" />
-            <div class="sun">
-              <p>Sunrise:</p>
-              <p id="sunrise-time">7:8</p>
-              <p>am</p>
-            </div>
-          </div>
-          <div class="main-section-bt">
-            <img class="const-icon" id="sunset-icon" src="./images/sunset.png" alt="weather-icon" />
-            <div class="sun">
-              <p>Sunset:</p>
-              <p id="sunset-time">5:31</p>
-              <p>pm</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
+				<img
+					class="main-section-icon"
+					id="main-section-icon"
+					src=""
+					alt="weather-icon"
+				/>
 
-    <footer>
-      <div class="footer-container">
-        <h2>5-Day Forecast</h2>
-        <div class="days-forecast">
-          <div class="day-card">
-            <img class="bts-icon" id="firstDay-icon" src="" alt="weather-icon" />
-            <h2 class="day" id="firstDay-weather">SUN</h2>
-            <div class="min-max">
-              <div class="max">
-                <div class="centeredIcon">
-                  <img class="const-icon" id="max-icon" src="./images/up-arrow.png"alt="weather-icon" />
-                </div>
-                <p id="firstDayMax-temperature">13°</p>
-              </div>
-              <div class="min">
-                <div class="centeredIcon">
-                 <img class="const-icon" id="min-icon" src="./images/down.png" alt="weather-icon" />
-                </div>
-                <p id="firstDayMin-temperature">13°</p>
-              </div>
-            </div>
-          </div>
-          <div class="day-card">
-            <img class="bts-icon" id="secondDay-icon" src="" alt="weather-icon" />
-            <h2 class="day" id="secondDay-weather">SUN</h2>
-            <div class="min-max">
-              <div class="max">
-                <div class="centeredIcon">
-                  <img class="const-icon" id="max-icon" src="./images/up-arrow.png"alt="weather-icon" />
-                </div>
-                <p id="secondDayMax-temperature">13°</p>
-              </div>
-              <div class="min">
-                <div class="centeredIcon">
-                 <img class="const-icon" id="min-icon" src="./images/down.png" alt="weather-icon" />
-                </div>
-                <p id="secondDayMin-temperature">13°</p>
-              </div>
-            </div>
-          </div>
-          <div class="day-card">
-            <img class="bts-icon" id="thirdDay-icon" src="" alt="weather-icon" />
-            <h2 class="day" id="thirdDay-weather">SUN</h2>
-            <div class="min-max">
-              <div class="max">
-                <div class="centeredIcon">
-                  <img class="const-icon" id="max-icon" src="./images/up-arrow.png"alt="weather-icon" />
-                </div>
-                <p id="thirdDayMax-temperature">13°</p>
-              </div>
-              <div class="min">
-                <div class="centeredIcon">
-                  <img class="const-icon" id="min-icon" src="./images/down.png" alt="weather-icon" />
-                </div>
-                <p id="thirdDayMin-temperature">13°</p>
-              </div>
-            </div>
-          </div>
-          <div class="day-card">
-            <img class="bts-icon" id="forthDay-icon" src="" alt="weather-icon" />
-            <h2 class="day" id="forthDay-weather">SUN</h2>
-            <div class="min-max">
-              <div class="max">
-                <div class="centeredIcon">
-                  <img class="const-icon" id="max-icon" src="./images/up-arrow.png"alt="weather-icon" />
-                </div>
-                <p id="forthDayMax-temperature">13°</p>
-              </div>
-              <div class="min">
-                <div class="centeredIcon">
-                  <img class="const-icon" id="min-icon" src="./images/down.png" alt="weather-icon" />
-                </div>
-                <p id="forthDayMin-temperature">13°</p>
-              </div>
-            </div>
-          </div>
-          <div class="day-card">
-            <img class="bts-icon" id="fifthDay-icon" src="" alt="weather-icon" />
-            <h2 class="day" id="fifthDay-weather">SUN</h2>
-            <div class="min-max">
-              <div class="max">
-                <div class="centeredIcon">
-                  <img class="const-icon" id="max-icon" src="./images/up-arrow.png"alt="weather-icon" />
-                </div>
-                <p id="fifthDayMax-temperature">13°</p>
-              </div>
-              <div class="min">
-                <div class="centeredIcon">
-                  <img class="const-icon" id="min-icon" src="./images/down.png" alt="weather-icon" />
-                </div>
-                <p id="fifthDayMin-temperature">13°</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </footer>
-   <script src="./JS/weather.js"></script>
-  </body>
+				<p class="temperature" id="temperature">3°C</p>
+
+				<h1 class="zone" id="zone">Albuquerque, NM</h1>
+				<p class="description" id="description">It is clear right now.</p>
+				<div class="main-section-bts">
+					<div class="main-section-bt">
+						<p>Wind:</p>
+						<i class="fa-solid fa-wind"></i>
+						<p id="wind">11.27</p>
+					</div>
+					<div class="main-section-bt">
+						<i class="fa-solid fa-sun"></i>
+						<div class="sun">
+							<p>Sunrise:</p>
+							<p id="sunrise-time">7:8</p>
+						</div>
+					</div>
+					<div class="main-section-bt">
+						<i class="fa-solid fa-sun"></i>
+						<div class="sun">
+							<p>Sunset:</p>
+							<p id="sunset-time">5:31</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+
+		<footer>
+			<div class="footer-container">
+				<h2>5-Day Forecast</h2>
+				<div id="days-forecast" class="days-forecast"></div>
+			</div>
+		</footer>
+		<script src="./js/weather.js"></script>
+	</body>
 </html>
